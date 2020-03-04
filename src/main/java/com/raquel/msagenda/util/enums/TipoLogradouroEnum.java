@@ -3,7 +3,8 @@ package com.raquel.msagenda.util.enums;
 public enum TipoLogradouroEnum {
     RUA(1L, "RUA"),
     AVENIDA(2L, "AVENIDA"),
-    RODOVIA(3L, "RODOVIA");
+    RODOVIA(3L, "RODOVIA"),
+    ESTRADA(4L, "ESTRADA");
 
     private Long valor;
     private String descricao;

@@ -1,10 +1,10 @@
 package com.raquel.msagenda.util.enums;
 
 public enum TipoTelefoneEnum {
-    RESIDENCIAL(1L, "RESIDENCIAL"),
+    RESIDENCIAL(1L, "FIXO RESIDENCIAL"),
     CELULAR_PESSOAL(2L, "CELULAR PESSOAL"),
     CELULAR_TRABALHO(3L, "CELULAR TRABALHO"),
-    TRABALHO(4L, "TRABALHO");
+    TRABALHO(4L, "FIXO TRABALHO");
 
     private Long valor;
     private String descricao;
@@ -21,4 +21,5 @@ public enum TipoTelefoneEnum {
     public String getDescricao() {
         return descricao;
     }
+
 }

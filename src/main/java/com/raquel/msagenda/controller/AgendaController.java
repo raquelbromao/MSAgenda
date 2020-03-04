@@ -2,7 +2,9 @@ package com.raquel.msagenda.controller;
 
 import com.raquel.msagenda.model.Agenda;
 import com.raquel.msagenda.service.AgendaService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,18 +20,23 @@ public class AgendaController {
     private AgendaService service;
 
     @GetMapping("/{id}")
-    public Agenda obterAgenda(@PathVariable final Long id) {
-        service.obterContato(id);
+    public Agenda obterContato(@PathVariable final Long id) {
+        return service.obterContato(id);
+    }
+
+    @GetMapping("/")
+    public List<Agenda> obterAgenda() {
+        return service.obterAgenda();
     }
 
     @PostMapping("/")
     public String criarContato(@RequestBody Agenda contato) {
-        service.criarContato(contato);
-        return "sucesso";
+        return service.criarContato(contato);
     }
 
-    @GetMapping("/")
-    public String index() {
-        return "Greetings from Spring Boot!";
+    @DeleteMapping("/{id}")
+    public String deletarContato(@PathVariable final Long id) {
+        service.deletarContato(id);
+        return "SUCESSO";
     }
 }

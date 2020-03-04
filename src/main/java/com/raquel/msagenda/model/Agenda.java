@@ -2,7 +2,6 @@ package com.raquel.msagenda.model;
 
 import java.time.LocalDate;
 import java.util.List;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,11 +12,10 @@ public class Agenda {
     @Id
     private String id;
     @NotNull(message = "Nome é obrigatório")
-    @NotEmpty(message = "Nome não pode ser vazio")
     private String nome;
     private LocalDate dataNascimento;
+    @NotNull(message = "CPF é obrigatório")
     private String cpf;
-
     private List<Endereco> enderecos;
     private List<Telefone> telefones;
 

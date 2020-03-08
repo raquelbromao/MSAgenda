@@ -1,14 +1,41 @@
 package com.raquel.msagenda.model;
 
+import javax.validation.constraints.Pattern;
+
 public class Endereco {
 
+    @Pattern(
+            regexp = "\\bRESIDENCIAL\\b|\\bTRABALHO\\b|\\bFERIAS\\b",
+            message = "Tipo de Endereço inexistente"
+    )
     private String tipoEndereco;
+    @Pattern(
+            regexp = "\\bRUA\\b|\\bAVENIDA\\b|\\bRODOVIA\\b|\\bESTRADA\\b",
+            message = "Tipo de Logradouro inexistente"
+    )
     private String tipoLogradouro;
-    private String Logradouro;
+
+    private String logradouro;
+    @Pattern(
+            regexp = "[0-9]{2}",
+            message = "Número do endereço fora do padrão [XX]"
+    )
     private int numero;
     private String complemento;
+    @Pattern(
+            regexp = "([A-Z ]+)",
+            message = "Bairro fora do padrão [apenas letras e espaços em branco]"
+    )
     private String bairro;
+    @Pattern(
+            regexp = "([A-Z ]+)",
+            message = "Cidade fora do padrão [apenas letras e espaços em branco]"
+    )
     private String cidade;
+    @Pattern(
+            regexp = "[0-9]{5}[-][0-9]{3}",
+            message = "CEP fora do padrão [XXXXX-XXX]"
+    )
     private String cep;
 
     public String getTipoEndereco() {
@@ -30,11 +57,11 @@ public class Endereco {
     }
 
     public String getLogradouro() {
-        return Logradouro;
+        return logradouro;
     }
 
-    public Endereco setLogradouro(String Logradouro) {
-        this.Logradouro = Logradouro;
+    public Endereco setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
         return this;
     }
 

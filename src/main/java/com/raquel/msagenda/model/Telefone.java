@@ -1,11 +1,29 @@
 package com.raquel.msagenda.model;
 
+import javax.validation.constraints.Pattern;
+
 public class Telefone {
 
+    @Pattern(
+            regexp = "\\bFIXO RESIDENCIAL\\b|\\bFIXO TRABALHO\\b|\\bCELULAR TRABALHO\\b|\\bCELULAR PESSOAL\\b",
+            message = "Tipo de Telefone inexistente"
+    )
     private String tipoTelefone;
+    @Pattern(
+            regexp = "[0-9]{2}",
+            message = "DDI fora do padrão [XX]"
+    )
     private int ddi;
+    @Pattern(
+            regexp = "[0-9]{2}",
+            message = "DDD fora do padrão [XX]"
+    )
     private int ddd;
     private String numero;
+    @Pattern(
+            regexp = "[2][0][0-9]{3}",
+            message = "Ramal fora do intervalo [20000-20999]"
+    )
     private String ramal;
 
     public String getTipoTelefone() {

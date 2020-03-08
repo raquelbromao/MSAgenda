@@ -7,7 +7,6 @@ com/raquel/msagenda/service/AgendaService.class
 com/raquel/msagenda/controller/AgendaController.class
 com/raquel/msagenda/repository/AgendaRepository.class
 com/raquel/msagenda/util/enums/TipoTelefoneEnum.class
-com/raquel/msagenda/service/ValidacaoService.class
 com/raquel/msagenda/model/Telefone.class
 com/raquel/msagenda/util/enums/TipoLogradouroEnum.class
 com/raquel/msagenda/util/enums/MensagemErroEnum.class

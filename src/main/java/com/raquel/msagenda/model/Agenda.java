@@ -2,7 +2,11 @@ package com.raquel.msagenda.model;
 
 import java.time.LocalDate;
 import java.util.List;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,11 +16,21 @@ public class Agenda {
     @Id
     private String id;
     @NotNull(message = "Nome é obrigatório")
+    @Pattern(
+            regexp = "^[A-Z ]+",
+            message = "Nome fora do padrão [apenas letras e espaços em branco]"
+    )
     private String nome;
     private LocalDate dataNascimento;
     @NotNull(message = "CPF é obrigatório")
+    @Pattern(
+            regexp = "([0-9]{3}[.]*){3}[-][0-9]{2}$",
+            message = "CPF fora do padrão [XXX.XXX.XXX-XX]"
+    )
     private String cpf;
+    @Valid
     private List<Endereco> enderecos;
+    @Valid
     private List<Telefone> telefones;
 
     public String getId() {

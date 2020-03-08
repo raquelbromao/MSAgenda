@@ -24,20 +24,12 @@ public class AgendaService {
     private JsonUtils jsonUtils;
     @Autowired
     private AgendaRepository repository;
-    @Autowired
-    private ValidacaoService validacaoService;
 
     public String criarContato(Agenda contato) {
         logger.info(format(
                 INSERINDO_NOVO_CONTATO.getMensagem(), jsonUtils.objectToJson(contato)));
-        List<String> erros = validacaoService.validarContato(contato);
-
-        if (erros.isEmpty()) {
             contato = repository.insert(contato);
             return "SUCESSO: Id " + contato.getId();
-        }
-
-        return "ERROS:\n " + erros.toString() + "\n\nCorrija os erros e tente novamente!";
     }
 
     public Agenda obterContato(Long id) {

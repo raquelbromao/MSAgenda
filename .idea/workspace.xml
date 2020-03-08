@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeed4713-5169-4c76-a2b5-99f6c911a1c3" name="Default Changelist" comment="" />
+    <list default="true" id="aeed4713-5169-4c76-a2b5-99f6c911a1c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Agenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Telefone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Telefone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/AgendaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/AgendaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/ValidacaoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Agenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Agenda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Endereco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Telefone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/AgendaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/AgendaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/ValidacaoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -18,7 +38,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last.edited.regexp" value="AVENIDA" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -32,5 +54,19 @@
       <updated>1583590419956</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="449" y="147" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583632834523">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="449" y="147" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1299.741@67.27.1299.741" timestamp="1583632834523" />
+    <state x="205" y="31" key="SettingsEditor" timestamp="1583630640915">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="205" y="31" key="SettingsEditor/67.27.1299.741/1366.0.1920.1080@67.27.1299.741" timestamp="1583630640915" />
+    <state x="410" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1583630656722">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="410" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1583630656722" />
   </component>
 </project>

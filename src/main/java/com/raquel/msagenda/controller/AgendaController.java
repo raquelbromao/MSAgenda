@@ -20,7 +20,7 @@ public class AgendaController {
     private AgendaService service;
 
     @GetMapping("/{id}")
-    public Agenda obterContato(@PathVariable final Long id) {
+    public Agenda obterContato(@PathVariable final String id) {
         return service.obterContato(id);
     }
 
@@ -35,7 +35,7 @@ public class AgendaController {
     }
 
     @DeleteMapping("/{id}")
-    public String deletarContato(@PathVariable final Long id) {
+    public String deletarContato(@PathVariable final String id) {
         service.deletarContato(id);
         return "SUCESSO";
     }

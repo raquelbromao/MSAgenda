@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeed4713-5169-4c76-a2b5-99f6c911a1c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/controller/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/controller/AgendaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Agenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Telefone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/model/Telefone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/repository/AgendaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/repository/AgendaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/AgendaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/AgendaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/ValidacaoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Agenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Agenda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Endereco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Telefone.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Telefone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemErroEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemErroEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemSistemaEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemSistemaEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/controller/AgendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/controller/AgendaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/repository/AgendaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/repository/AgendaRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/AgendaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/AgendaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/ValidacaoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemErroEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemErroEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemSistemaEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemSistemaEnum.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

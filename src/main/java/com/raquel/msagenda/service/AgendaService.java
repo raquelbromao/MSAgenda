@@ -32,7 +32,7 @@ public class AgendaService {
             return "SUCESSO: Id " + contato.getId();
     }
 
-    public Agenda obterContato(Long id) {
+    public Agenda obterContato(String id) {
         logger.info(format(
                 OBTENDO_CONTATO.getMensagem(), id));
         Optional<Agenda> optionalAgenda = repository.findById(id);
@@ -45,7 +45,7 @@ public class AgendaService {
         return repository.findAll();
     }
 
-    public void deletarContato(Long id) {
+    public void deletarContato(String id) {
         repository.deleteById(id);
     }
 }

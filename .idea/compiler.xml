@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="msagenda" target="11" />
+      <module name="msagenda" target="13" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

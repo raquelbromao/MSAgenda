@@ -52,6 +52,7 @@ public class ValidacaoService {
                         validarCep(endereco.getCep(), erros);
                         validarTipoLogradouro(endereco.getTipoLogradouro(), erros);
                         validarTipoEndereco(endereco.getTipoEndereco(), erros);
+                        validarBairroECidade(endereco.getBairro(), endereco.getCidade(), erros);
                     });
         }
     }
@@ -74,10 +75,14 @@ public class ValidacaoService {
 
     private void validarCep(String cep, List<String> erros) {
         if (!Strings.isBlank(cep)) {
-            if (!cep.trim().matches("[0-9]{5}[-][0-9]{2}$")) {
+            if (!cep.trim().matches("[0-9]{5}[-][0-9]{3}")) {
                 erros.add("CEP fora do padrão [XXXXX-XXX]");
             }
+
+            return;
         }
+
+        erros.add("CEP é obrigatório");
     }
 
     private void validarNumeroCelular(String numero, List<String> erros) {
@@ -124,48 +129,72 @@ public class ValidacaoService {
     private void validarTipoTelefone(Telefone telefone, List<String> erros) {
         if (!Strings.isBlank(telefone.getTipoTelefone())) {
             if (!telefone.getTipoTelefone().toUpperCase()
-                    .matches("[FIXO RESICENCIAL]|[FIXO TRABALHO]|[CELULAR TRABALHO]|[CELULAR PESSOAL]")) {
-                erros.add("Tipo de Telefone fora do padrão [" + obterTodosTiposTelefone() + "]");
-                return;
-            }
+                    .matches("([FIXO RESIDENCIAL]|[FIXO TRABALHO]|[CELULAR TRABALHO]|[CELULAR PESSOAL])")) {
+                erros.add("Tipo de Telefone fora do padrão " + obterTodosTiposTelefone());
+            } else {
 
-            if (telefone.getTipoTelefone().contains("FIXO")) {
-                validarNumeroFixo(telefone.getNumero(), erros);
-            }
-
-            if (telefone.getTipoTelefone().contains("CELULAR")) {
-                validarNumeroCelular(telefone.getNumero(), erros);
+                if (telefone.getTipoTelefone().toUpperCase().contains("FIXO")) {
+                    validarNumeroFixo(telefone.getNumero(), erros);
+                } else {
+                    validarNumeroCelular(telefone.getNumero(), erros);
+                }
             }
 
             return;
         }
 
-        erros.add("Tipo de Telefone é obrigatório [" + obterTodosTiposTelefone() + "]");
+        erros.add("Tipo de Telefone é obrigatório " + obterTodosTiposTelefone());
     }
 
     private void validarTipoLogradouro(String tipoLogradouro, List<String> erros) {
         if (!Strings.isBlank(tipoLogradouro)) {
             if (!tipoLogradouro.toUpperCase()
                     .matches("[RUA]|[AVENIDA]|[RODOVIA]|[ESTRADA]")) {
-                erros.add("Tipo de Logradouro fora do padrão [" + obterTodosTiposLogradouro() + "]");
+                erros.add("Tipo de Logradouro fora do padrão " + obterTodosTiposLogradouro());
+                return;
             }
+
+            return;
         }
 
-        erros.add("Tipo de Logradouro é obrigatório [" + obterTodosTiposLogradouro() + "]");
+        erros.add("Tipo de Logradouro é obrigatório " + obterTodosTiposLogradouro());
     }
 
     private void validarTipoEndereco(String tipoEndereco, List<String> erros) {
         if (!Strings.isBlank(tipoEndereco)) {
             if (!tipoEndereco.toUpperCase()
-                    .matches("[RUA]|[AVENIDA]|[RODOVIA]|[ESTRADA]")) {
-                erros.add("Tipo de Logradouro fora do padrão [" + obterTodosTiposEndereco() + "]");
+                    .matches("[RESIDENCIAL]|[TRABALHO]|[FERIAS]")) {
+                erros.add("Tipo de Endereco fora do padrão " + obterTodosTiposEndereco());
+                return;
             }
+
+            return;
         }
 
-        erros.add("Tipo de Logradouro é obrigatório [" + obterTodosTiposEndereco() + "]");
+        erros.add("Tipo de Endereco é obrigatório " + obterTodosTiposEndereco());
     }
 
-    public String obterTodosTiposTelefone() {
+    private void validarBairroECidade(String bairro, String cidade, List<String> erros) {
+        if (!Strings.isBlank(cidade)) {
+            if (!cidade.toUpperCase().matches("([A-Z ]+)")) {
+                erros.add(format("Cidade %s fora do padrão [apenas letras e espaços em branco]", cidade));
+            }
+            return;
+        }
+
+        erros.add("Cidade é obrigatória");
+
+        if (!Strings.isBlank(bairro)) {
+            if (!bairro.toUpperCase().matches("([A-Z ]+)")) {
+                erros.add(format("Bairro %s fora do padrão [apenas letras e espaços em branco]", bairro));
+            }
+            return;
+        }
+
+        erros.add("Bairro é obrigatório");
+    }
+
+    private String obterTodosTiposTelefone() {
         List<String> listaTelefones = new ArrayList<>();
         for (TipoTelefoneEnum telefone : TipoTelefoneEnum.values()) {
             listaTelefones.add(telefone.getDescricao());
@@ -175,7 +204,7 @@ public class ValidacaoService {
         return listaTelefones.toString();
     }
 
-    public String obterTodosTiposLogradouro() {
+    private String obterTodosTiposLogradouro() {
         List<String> listaLogradouros = new ArrayList<>();
         for (TipoLogradouroEnum logradouro : TipoLogradouroEnum.values()) {
             listaLogradouros.add(logradouro.getDescricao());
@@ -194,4 +223,5 @@ public class ValidacaoService {
         logger.info(listaEnderecos.toString());
         return listaEnderecos.toString();
     }
+
 }

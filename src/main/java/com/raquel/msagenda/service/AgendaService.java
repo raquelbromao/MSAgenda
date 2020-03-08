@@ -37,7 +37,7 @@ public class AgendaService {
             return "SUCESSO: Id " + contato.getId();
         }
 
-        return "ERROS: " + erros.toString() + "\nCorrija os erros e tente novamente!";
+        return "ERROS:\n " + erros.toString() + "\n\nCorrija os erros e tente novamente!";
     }
 
     public Agenda obterContato(Long id) {

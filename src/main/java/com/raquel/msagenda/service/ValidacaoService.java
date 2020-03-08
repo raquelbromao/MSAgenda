@@ -129,7 +129,7 @@ public class ValidacaoService {
     private void validarTipoTelefone(Telefone telefone, List<String> erros) {
         if (!Strings.isBlank(telefone.getTipoTelefone())) {
             if (!telefone.getTipoTelefone().toUpperCase()
-                    .matches("([FIXO RESIDENCIAL]|[FIXO TRABALHO]|[CELULAR TRABALHO]|[CELULAR PESSOAL])")) {
+                    .matches("(\\bFIXO RESIDENCIAL\\b|\\bFIXO TRABALHO\\b|\\bCELULAR TRABALHO\\b|\\bCELULAR PESSOAL\\b)")) {
                 erros.add("Tipo de Telefone fora do padrão " + obterTodosTiposTelefone());
             } else {
 
@@ -149,7 +149,7 @@ public class ValidacaoService {
     private void validarTipoLogradouro(String tipoLogradouro, List<String> erros) {
         if (!Strings.isBlank(tipoLogradouro)) {
             if (!tipoLogradouro.toUpperCase()
-                    .matches("[RUA]|[AVENIDA]|[RODOVIA]|[ESTRADA]")) {
+                    .matches("\\bRUA\\b|\\bAVENIDA\\b|\\bRODOVIA\\b|\\bESTRADA\\b")) {
                 erros.add("Tipo de Logradouro fora do padrão " + obterTodosTiposLogradouro());
                 return;
             }
@@ -163,7 +163,7 @@ public class ValidacaoService {
     private void validarTipoEndereco(String tipoEndereco, List<String> erros) {
         if (!Strings.isBlank(tipoEndereco)) {
             if (!tipoEndereco.toUpperCase()
-                    .matches("[RESIDENCIAL]|[TRABALHO]|[FERIAS]")) {
+                    .matches("\\bRESIDENCIAL\\b|\\bTRABALHO\\b|\\bFERIAS\\b")) {
                 erros.add("Tipo de Endereco fora do padrão " + obterTodosTiposEndereco());
                 return;
             }

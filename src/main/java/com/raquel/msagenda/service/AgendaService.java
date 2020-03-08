@@ -29,7 +29,7 @@ public class AgendaService {
         logger.info(format(
                 INSERINDO_NOVO_CONTATO.getMensagem(), jsonUtils.objectToJson(contato)));
             contato = repository.insert(contato);
-            return "SUCESSO: Id " + contato.getId();
+            return contato.getId();
     }
 
     public Agenda obterContato(String id) {
@@ -47,5 +47,17 @@ public class AgendaService {
 
     public void deletarContato(String id) {
         repository.deleteById(id);
+    }
+
+    public void atualizarContato(Agenda contatoAtualizado) {
+        logger.info(format(
+                OBTENDO_CONTATO.getMensagem(), contatoAtualizado.getId()));
+        repository
+                .findById(contatoAtualizado.getId())
+                .orElseThrow(()
+                        -> new IllegalStateException(
+                                format(CONTATO_NAO_EXISTENTE.getErro(), contatoAtualizado.getId())));
+
+        repository.save(contatoAtualizado);
     }
 }

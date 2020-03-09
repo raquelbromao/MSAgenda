@@ -1,0 +1,5 @@
+Projeto de criação de CRUD de uma agenda via SpringBoot
+
+Para compilar:
+mvn clean install
+mvn spring-boot:run

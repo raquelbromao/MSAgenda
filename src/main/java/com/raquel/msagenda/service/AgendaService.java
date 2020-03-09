@@ -3,7 +3,6 @@ package com.raquel.msagenda.service;
 import com.raquel.msagenda.model.Agenda;
 import com.raquel.msagenda.model.Telefone;
 import com.raquel.msagenda.repository.AgendaRepository;
-import com.raquel.msagenda.util.JsonUtils;
 
 import static com.raquel.msagenda.util.enums.MensagemErroEnum.*;
 
@@ -26,8 +25,6 @@ public class AgendaService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private JsonUtils jsonUtils;
-    @Autowired
     private AgendaRepository repository;
 
     /**
@@ -38,8 +35,7 @@ public class AgendaService {
      * @throws IllegalStateException caso o número fornecido não esteja dentro do padrão
      */
     public String criarContato(Agenda contato) {
-        logger.info(format(
-                INSERINDO_NOVO_CONTATO.getMensagem(), jsonUtils.objectToJson(contato)));
+        logger.info(INSERINDO_NOVO_CONTATO.getMensagem());
 
         contato.getTelefones()
                 .stream()
@@ -48,6 +44,11 @@ public class AgendaService {
         return contato.getId();
     }
 
+    /**
+     * Verifica o tipo de telefone para iniciar a regra de gravação
+     *
+     * @param telefone telefone do contato
+     */
     private void verificarTelefone(Telefone telefone) {
         if (telefone.getTipoTelefone().contains("FIXO")) {
             if (!telefone.getNumero().matches("[0-9]{8}")) {
@@ -70,8 +71,7 @@ public class AgendaService {
      * @throws IllegalStateException caso o contato não exista na base de dados
      */
     public Agenda obterContato(String id) {
-        logger.info(format(
-                OBTENDO_CONTATO.getMensagem(), id));
+        logger.info(OBTENDO_CONTATO.getMensagem());
         Optional<Agenda> optionalAgenda = repository.findById(id);
         return optionalAgenda.orElseThrow(()
                 -> new IllegalStateException(format(CONTATO_NAO_EXISTENTE.getErro(), id)));
@@ -94,8 +94,7 @@ public class AgendaService {
      * @throws IllegalStateException caso o contato não exista na base de dados
      */
     public void deletarContato(String id) {
-        logger.info(format(
-                DELETANDO_CONTATO.getMensagem(), id));
+        logger.info(DELETANDO_CONTATO.getMensagem());
         verificarId(id);
         repository.deleteById(id);
     }
@@ -107,8 +106,7 @@ public class AgendaService {
      * @throws IllegalStateException caso o contato não exista na base de dados
      */
     public void atualizarContato(Agenda contatoAtualizado) {
-        logger.info(format(
-                OBTENDO_CONTATO.getMensagem(), contatoAtualizado.getId()));
+        logger.info(OBTENDO_CONTATO.getMensagem());
         verificarId(contatoAtualizado.getId());
         repository.save(contatoAtualizado);
     }
@@ -120,10 +118,11 @@ public class AgendaService {
      * @throws IllegalStateException caso o contato não exista na base de dados
      */
     private void verificarId(String id) {
-        repository
-                .findById(id)
-                .orElseThrow(()
-                        -> new IllegalStateException(
-                        format(CONTATO_NAO_EXISTENTE.getErro(), id)));
+        Optional<Agenda> agendaOptional = repository.findById(id);
+
+        if (!agendaOptional.isPresent()) {
+            throw new IllegalStateException(
+                    format(CONTATO_NAO_EXISTENTE.getErro(), id));
+        }
     }
 }

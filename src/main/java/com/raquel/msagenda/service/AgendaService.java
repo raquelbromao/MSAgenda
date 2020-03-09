@@ -1,6 +1,7 @@
 package com.raquel.msagenda.service;
 
 import com.raquel.msagenda.model.Agenda;
+import com.raquel.msagenda.model.Telefone;
 import com.raquel.msagenda.repository.AgendaRepository;
 import com.raquel.msagenda.util.JsonUtils;
 
@@ -42,21 +43,23 @@ public class AgendaService {
 
         contato.getTelefones()
                 .stream()
-                .forEach(telefone -> {
-                    if (telefone.getTipoTelefone().contains("FIXO")) {
-                        if (!telefone.getNumero().matches("[0-9]{8}")) {
-                            throw new IllegalStateException(format(
-                                    NUMERO_FIXO_FORA_PADRAO.getErro(), telefone.getNumero()));
-                        }
-                    } else {
-                        if (!telefone.getNumero().matches("[9][0-9]{8}")) {
-                            throw new IllegalStateException(format(
-                                    NUMERO_CELULAR_FORA_PADRAO.getErro(), telefone.getNumero()));
-                        }
-                    }
-                });
+                .forEach(telefone ->  verificarTelefone(telefone));
         contato = repository.insert(contato);
         return contato.getId();
+    }
+
+    private void verificarTelefone(Telefone telefone) {
+        if (telefone.getTipoTelefone().contains("FIXO")) {
+            if (!telefone.getNumero().matches("[0-9]{8}")) {
+                throw new IllegalStateException(format(
+                        NUMERO_FIXO_FORA_PADRAO.getErro(), telefone.getNumero()));
+            }
+        } else {
+            if (!telefone.getNumero().matches("[9][0-9]{8}")) {
+                throw new IllegalStateException(format(
+                        NUMERO_CELULAR_FORA_PADRAO.getErro(), telefone.getNumero()));
+            }
+        }
     }
 
     /**
@@ -111,7 +114,7 @@ public class AgendaService {
     }
 
     /**
-     * Verifica existẽncia do id na base de dados
+     * Verifica existência do id na base de dados
      *
      * @param id do contato na base de dados
      * @throws IllegalStateException caso o contato não exista na base de dados

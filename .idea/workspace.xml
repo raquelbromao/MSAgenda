@@ -2,27 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeed4713-5169-4c76-a2b5-99f6c911a1c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/raquel/msagenda/environment/AgendaEnvironment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/raquel/msagenda/service/AgendaServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msagenda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/msagenda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/controller/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/controller/AgendaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/AgendaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/service/AgendaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemErroEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemErroEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemSistemaEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/raquel/msagenda/util/enums/MensagemSistemaEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/controller/AgendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/controller/AgendaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Agenda.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Endereco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/model/Telefone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/repository/AgendaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/repository/AgendaRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/AgendaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/service/AgendaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemErroEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemErroEnum.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemSistemaEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/raquel/msagenda/util/enums/MensagemSistemaEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="211" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,6 +38,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YntvqjbdceFCaalhDFaU0LK5Hg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -48,6 +53,22 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunManager" selected="JUnit.AgendaServiceTest">
+    <configuration name="AgendaControllerTest.atualizarContatoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="msagenda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.raquel.msagenda.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.raquel.msagenda.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.raquel.msagenda.controller.AgendaControllerTest" />
+      <option name="METHOD_NAME" value="atualizarContatoTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AgendaServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="msagenda" />
       <extension name="coverage">
@@ -59,6 +80,22 @@
       <option name="PACKAGE_NAME" value="com.raquel.msagenda.service" />
       <option name="MAIN_CLASS_NAME" value="com.raquel.msagenda.service.AgendaServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AgendaServiceTest.criarContatoTelefoneFixoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="msagenda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.raquel.msagenda.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.raquel.msagenda.service" />
+      <option name="MAIN_CLASS_NAME" value="com.raquel.msagenda.service.AgendaServiceTest" />
+      <option name="METHOD_NAME" value="criarContatoTelefoneFixoTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -79,10 +116,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in msagenda (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="msagenda" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AgendaServiceTest" />
+        <item itemvalue="JUnit.All in msagenda (1)" />
+        <item itemvalue="JUnit.AgendaServiceTest.criarContatoTelefoneFixoTest" />
         <item itemvalue="JUnit.AgendaServiceTest.criarContatoTest" />
+        <item itemvalue="JUnit.AgendaControllerTest.atualizarContatoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -104,35 +152,83 @@
       <screen x="67" y="27" width="3219" height="1053" />
     </state>
     <state x="2134" y="258" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.3219.1053@67.27.3219.1053" timestamp="1583686435572" />
-    <state x="1366" y="198" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583688411535">
-      <screen x="67" y="27" width="3219" height="1053" />
+    <state x="508" y="260" width="417" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583769622617">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="449" y="147" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1299.741@67.27.1299.741" timestamp="1583632834523" />
+    <state x="508" y="260" width="417" height="282" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/67.27.1299.741@67.27.1299.741" timestamp="1583769622617" />
+    <state x="449" y="147" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583772546999">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="449" y="147" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1299.741@67.27.1299.741" timestamp="1583772546999" />
     <state x="1366" y="198" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.3219.1053@67.27.3219.1053" timestamp="1583688411535" />
-    <state width="1878" height="289" key="GridCell.Tab.0.bottom" timestamp="1583746222010">
+    <state width="1878" height="303" key="GridCell.Tab.0.bottom" timestamp="1583798567895">
       <screen x="67" y="27" width="3219" height="1053" />
     </state>
-    <state width="1878" height="289" key="GridCell.Tab.0.bottom/67.27.3219.1053@67.27.3219.1053" timestamp="1583746222010" />
-    <state width="1878" height="289" key="GridCell.Tab.0.center" timestamp="1583746222010">
+    <state width="1257" height="221" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1583773864425" />
+    <state width="1878" height="303" key="GridCell.Tab.0.bottom/67.27.3219.1053@67.27.3219.1053" timestamp="1583798567895" />
+    <state width="1878" height="303" key="GridCell.Tab.0.center" timestamp="1583798567895">
       <screen x="67" y="27" width="3219" height="1053" />
     </state>
-    <state width="1878" height="289" key="GridCell.Tab.0.center/67.27.3219.1053@67.27.3219.1053" timestamp="1583746222010" />
-    <state width="1878" height="289" key="GridCell.Tab.0.left" timestamp="1583746222009">
+    <state width="1257" height="221" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1583773864411" />
+    <state width="1878" height="303" key="GridCell.Tab.0.center/67.27.3219.1053@67.27.3219.1053" timestamp="1583798567895" />
+    <state width="1878" height="303" key="GridCell.Tab.0.left" timestamp="1583798567894">
       <screen x="67" y="27" width="3219" height="1053" />
     </state>
-    <state width="1878" height="289" key="GridCell.Tab.0.left/67.27.3219.1053@67.27.3219.1053" timestamp="1583746222009" />
-    <state width="1878" height="289" key="GridCell.Tab.0.right" timestamp="1583746222010">
+    <state width="1257" height="221" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1583773864410" />
+    <state width="1878" height="303" key="GridCell.Tab.0.left/67.27.3219.1053@67.27.3219.1053" timestamp="1583798567894" />
+    <state width="1878" height="303" key="GridCell.Tab.0.right" timestamp="1583798567895">
       <screen x="67" y="27" width="3219" height="1053" />
     </state>
-    <state width="1878" height="289" key="GridCell.Tab.0.right/67.27.3219.1053@67.27.3219.1053" timestamp="1583746222010" />
+    <state width="1257" height="221" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1583773864422" />
+    <state width="1878" height="303" key="GridCell.Tab.0.right/67.27.3219.1053@67.27.3219.1053" timestamp="1583798567895" />
+    <state width="1257" height="221" key="GridCell.Tab.1.bottom" timestamp="1583773864426">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1257" height="221" key="GridCell.Tab.1.bottom/67.27.1299.741@67.27.1299.741" timestamp="1583773864426" />
+    <state width="1257" height="221" key="GridCell.Tab.1.center" timestamp="1583773864426">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1257" height="221" key="GridCell.Tab.1.center/67.27.1299.741@67.27.1299.741" timestamp="1583773864426" />
+    <state width="1257" height="221" key="GridCell.Tab.1.left" timestamp="1583773864425">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1257" height="221" key="GridCell.Tab.1.left/67.27.1299.741@67.27.1299.741" timestamp="1583773864425" />
+    <state width="1257" height="221" key="GridCell.Tab.1.right" timestamp="1583773864426">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1257" height="221" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1583773864426" />
     <state x="389" y="33" key="SettingsEditor" timestamp="1583687054691">
       <screen x="67" y="27" width="3219" height="1053" />
     </state>
     <state x="205" y="31" key="SettingsEditor/67.27.1299.741/1366.0.1920.1080@67.27.1299.741" timestamp="1583630640915" />
     <state x="389" y="33" key="SettingsEditor/67.27.3219.1053@67.27.3219.1053" timestamp="1583687054691" />
-    <state x="410" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1583680692206">
+    <state x="410" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1583788636808">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="410" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1583680692206" />
+    <state x="410" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1583788636808" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/raquel/msagenda/service/AgendaServiceTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/msagenda$All_in_msagenda__1_.ic" NAME="All in msagenda (1) Coverage Results" MODIFIED="1583798292406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/msagenda$AgendaServiceTest.ic" NAME="AgendaServiceTest Coverage Results" MODIFIED="1583798542716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.raquel.msagenda.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/msagenda$AgendaControllerTest.ic" NAME="AgendaControllerTest Coverage Results" MODIFIED="1583771750069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.raquel.msagenda.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/msagenda$AgendaControllerTest_atualizarContatoTest.ic" NAME="AgendaControllerTest.atualizarContatoTest Coverage Results" MODIFIED="1583771726721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.raquel.msagenda.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/msagenda$All_in_msagenda.ic" NAME="All in msagenda Coverage Results" MODIFIED="1583772333887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

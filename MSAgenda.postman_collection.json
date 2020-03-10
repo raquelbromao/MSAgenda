@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "7336fdb2-1b79-4720-8e3b-78bc66bcfd1f",
+		"name": "MSAgenda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar Contato",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": null,\n    \"nome\": \"Raquel\",\n    \"dataNascimento\": \"1992-06-26\",\n    \"cpf\": \"418.120.988-12\",\n    \"enderecos\": [\n        {\n            \"tipoEndereco\": \"RESIDENCIAL\",\n            \"tipoLogradouro\": \"RUA\",\n            \"numero\": 12,\n            \"complemento\": \"ap 101\",\n            \"bairro\": \"cenTro\",\n            \"cidade\": \"Araras\",\n            \"cep\": \"13600-010\",\n            \"logradouro\": \"RUA\"\n        }\n    ],\n    \"telefones\": [\n        {\n            \"tipoTelefone\": \"CELULAR PESSOAL\",\n            \"ddi\": 55,\n            \"ddd\": 19,\n            \"numero\": \"989686284\",\n            \"ramal\": \"20999\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8769/agenda/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8769",
+					"path": [
+						"agenda",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Contato",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8769/agenda/5e6453a289b57f7512b8e4a8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8769",
+					"path": [
+						"agenda",
+						"5e6453a289b57f7512b8e4a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Contato",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8769/agenda/5e6453a289b57f7512b8e4a8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8769",
+					"path": [
+						"agenda",
+						"5e6453a289b57f7512b8e4a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Agenda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8769/agenda/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8769",
+					"path": [
+						"agenda",
+						""
+					]
+				},
+				"description": "obtêm todos os contatos da agenda"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Contato",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"5e6453a289b57f7512b8e4a8\",\n    \"nome\": \"Raquel\",\n    \"dataNascimento\": \"1992-06-26\",\n    \"cpf\": \"418.120.988-12\",\n    \"enderecos\": [\n        {\n            \"tipoEndereco\": \"RESIDENCIAL\",\n            \"tipoLogradouro\": \"RUA\",\n            \"numero\": 12,\n            \"complemento\": null,\n            \"bairro\": \"cenTro\",\n            \"cidade\": \"Araras\",\n            \"cep\": \"13600-010\",\n            \"logradouro\": \"RUA\"\n        }\n    ],\n    \"telefones\": [\n        {\n            \"tipoTelefone\": \"CELULAR PESSOAL\",\n            \"ddi\": 55,\n            \"ddd\": 19,\n            \"numero\": \"989686284\",\n            \"ramal\": \"20999\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8769/agenda/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8769",
+					"path": [
+						"agenda",
+						""
+					]
+				},
+				"description": "Atualiza informações de um contato já existente na base de dados"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

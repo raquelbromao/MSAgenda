@@ -1,9 +1,9 @@
-package com.raquel.msagenda.model;
+package com.raquel.msagenda.model.dto;
 
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 
-public class Telefone {
-
+public class TelefoneDTO implements Serializable {
     @Pattern(
             regexp = "\\bFIXO RESIDENCIAL\\b|\\bFIXO TRABALHO\\b|\\bCELULAR TRABALHO\\b|\\bCELULAR PESSOAL\\b",
             message = "Tipo de Telefone inexistente"
@@ -30,7 +30,7 @@ public class Telefone {
         return tipoTelefone;
     }
 
-    public Telefone setTipoTelefone(String tipoTelefone) {
+    public TelefoneDTO setTipoTelefone(String tipoTelefone) {
         this.tipoTelefone = tipoTelefone;
         return this;
     }
@@ -39,7 +39,7 @@ public class Telefone {
         return ddi;
     }
 
-    public Telefone setDdi(int ddi) {
+    public TelefoneDTO setDdi(int ddi) {
         this.ddi = ddi;
         return this;
     }
@@ -48,7 +48,7 @@ public class Telefone {
         return ddd;
     }
 
-    public Telefone setDdd(int ddd) {
+    public TelefoneDTO setDdd(int ddd) {
         this.ddd = ddd;
         return this;
     }
@@ -57,7 +57,7 @@ public class Telefone {
         return numero;
     }
 
-    public Telefone setNumero(String numero) {
+    public TelefoneDTO setNumero(String numero) {
         this.numero = numero;
         return this;
     }
@@ -66,9 +66,8 @@ public class Telefone {
         return ramal;
     }
 
-    public Telefone setRamal(String ramal) {
+    public TelefoneDTO setRamal(String ramal) {
         this.ramal = ramal;
         return this;
     }
-
 }

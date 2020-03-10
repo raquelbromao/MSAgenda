@@ -1,7 +1,9 @@
 package com.raquel.msagenda.controller;
 
+import com.raquel.msagenda.environment.AgendaDTOEnvironment;
 import com.raquel.msagenda.environment.AgendaEnvironment;
-import com.raquel.msagenda.model.Agenda;
+import com.raquel.msagenda.model.document.Agenda;
+import com.raquel.msagenda.model.dto.AgendaDTO;
 import com.raquel.msagenda.service.AgendaService;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.core.convert.ConversionService;
 
 import java.util.Arrays;
 
@@ -24,6 +27,8 @@ public class AgendaControllerTest {
     private AgendaController controller;
     @Mock
     private AgendaService service;
+    @Mock
+    private ConversionService conversor;
 
     @BeforeEach
     public void setup() throws Exception {
@@ -34,9 +39,12 @@ public class AgendaControllerTest {
     void criarContatoTest() throws Exception {
         String id = "1a";
         Agenda contato = AgendaEnvironment.criarContato();
+        AgendaDTO contatoDTO = AgendaDTOEnvironment.criarContato();
+        when(conversor.convert(contato, AgendaDTO.class))
+            .thenReturn(contatoDTO);
         when(service.criarContato(contato)).thenReturn(id);
 
-        controller.criarContato(contato);
+        controller.criarContato(contatoDTO);
 
         given()
                 .standaloneSetup(controller)
@@ -66,8 +74,10 @@ public class AgendaControllerTest {
     @Test
     void obterAgendaTest() throws Exception {
         Agenda contato = AgendaEnvironment.criarContato();
+        AgendaDTO contatoDTO = AgendaDTOEnvironment.criarContato();
         when(service.obterAgenda()).thenReturn(Arrays.asList(contato));
-
+        when(conversor.convert(contato, AgendaDTO.class))
+                .thenReturn(contatoDTO);
         controller.obterAgenda();
 
         given()
@@ -96,9 +106,12 @@ public class AgendaControllerTest {
     @Test
     void atualizarContatoTest() throws Exception {
         Agenda contato = AgendaEnvironment.criarContato();
+        AgendaDTO contatoDTO = AgendaDTOEnvironment.criarContato();
         doNothing().when(service).atualizarContato(contato);
+        when(conversor.convert(contato, AgendaDTO.class))
+                .thenReturn(contatoDTO);
 
-        controller.atualizarContato(contato);
+        controller.atualizarContato(contatoDTO);
 
         given()
                 .standaloneSetup(controller)

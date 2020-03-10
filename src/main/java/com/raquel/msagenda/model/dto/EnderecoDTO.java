@@ -1,9 +1,9 @@
-package com.raquel.msagenda.model;
+package com.raquel.msagenda.model.dto;
 
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 
-public class Endereco {
-
+public class EnderecoDTO implements Serializable {
     @Pattern(
             regexp = "\\bRESIDENCIAL\\b|\\bTRABALHO\\b|\\bFERIAS\\b",
             message = "Tipo de Endereço inexistente"
@@ -42,7 +42,7 @@ public class Endereco {
         return tipoEndereco;
     }
 
-    public Endereco setTipoEndereco(String tipoEndereco) {
+    public EnderecoDTO setTipoEndereco(String tipoEndereco) {
         this.tipoEndereco = tipoEndereco;
         return this;
     }
@@ -51,7 +51,7 @@ public class Endereco {
         return tipoLogradouro;
     }
 
-    public Endereco setTipoLogradouro(String tipoLogradouro) {
+    public EnderecoDTO setTipoLogradouro(String tipoLogradouro) {
         this.tipoLogradouro = tipoLogradouro;
         return this;
     }
@@ -60,7 +60,7 @@ public class Endereco {
         return logradouro;
     }
 
-    public Endereco setLogradouro(String logradouro) {
+    public EnderecoDTO setLogradouro(String logradouro) {
         this.logradouro = logradouro;
         return this;
     }
@@ -69,7 +69,7 @@ public class Endereco {
         return numero;
     }
 
-    public Endereco setNumero(int numero) {
+    public EnderecoDTO setNumero(int numero) {
         this.numero = numero;
         return this;
     }
@@ -78,7 +78,7 @@ public class Endereco {
         return complemento;
     }
 
-    public Endereco setComplemento(String complemento) {
+    public EnderecoDTO setComplemento(String complemento) {
         this.complemento = complemento;
         return this;
     }
@@ -87,7 +87,7 @@ public class Endereco {
         return bairro;
     }
 
-    public Endereco setBairro(String bairro) {
+    public EnderecoDTO setBairro(String bairro) {
         this.bairro = bairro;
         return this;
     }
@@ -96,7 +96,7 @@ public class Endereco {
         return cidade;
     }
 
-    public Endereco setCidade(String cidade) {
+    public EnderecoDTO setCidade(String cidade) {
         this.cidade = cidade;
         return this;
     }
@@ -105,9 +105,8 @@ public class Endereco {
         return cep;
     }
 
-    public Endereco setCep(String cep) {
+    public EnderecoDTO setCep(String cep) {
         this.cep = cep;
         return this;
     }
-
 }

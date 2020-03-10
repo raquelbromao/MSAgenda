@@ -1,7 +1,7 @@
 package com.raquel.msagenda.service;
 
 import com.raquel.msagenda.environment.AgendaEnvironment;
-import com.raquel.msagenda.model.Agenda;
+import com.raquel.msagenda.model.document.Agenda;
 import com.raquel.msagenda.repository.AgendaRepository;
 import org.junit.jupiter.api.*;
 import org.mockito.InjectMocks;
@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static com.raquel.msagenda.util.enums.MensagemErroEnum.CONTATO_NAO_EXISTENTE;
+import static com.raquel.msagenda.util.enums.MensagemErroEnum.*;
 import static java.lang.String.format;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
@@ -31,22 +31,63 @@ public class AgendaServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
-//    @Test
-//    void criarContatoTest() throws Exception {
-//        Agenda contato = AgendaEnvironment.criarContato();
-//        contato.setId("54354355d758j8778");
-//        when(repository.insert(contato)).thenReturn(contato);
-//        String id = service.criarContato(contato);
-//
-//        Assertions.assertEquals("54354355d758j8778", id);
-//    }
+    @Test
+    void criarContatoTelefoneCelularTest() throws Exception {
+        Agenda contato = AgendaEnvironment.criarContato();
+        contato.setId("54354355d758j8778");
+        when(repository.insert(contato)).thenReturn(contato);
+        String id = Assertions.assertDoesNotThrow(() -> service.criarContato(contato));
+
+        Assertions.assertEquals("54354355d758j8778", id);
+    }
+
+    @Test
+    void criarContatoTelefoneCelularErrorTest() throws Exception {
+        Agenda contato = AgendaEnvironment.criarContato();
+        contato.getTelefones().get(0).setNumero("89076655");
+
+        IllegalStateException exception =
+                Assertions.assertThrows(IllegalStateException.class,
+                        () -> service.criarContato(contato));
+
+        Assertions.assertEquals(
+                format(NUMERO_CELULAR_FORA_PADRAO.getErro(),
+                        contato.getTelefones().get(0).getNumero()),
+                exception.getMessage());
+    }
+
+    @Test
+    void criarContatoTelefoneFixoTest() throws Exception {
+        Agenda contato = AgendaEnvironment.criarContato();
+        contato.setTelefones(Arrays.asList(AgendaEnvironment.criarTelefoneFixo()));
+        contato.setId("54354355d758j8778");
+        when(repository.insert(contato)).thenReturn(contato);
+        String id = Assertions.assertDoesNotThrow(() -> service.criarContato(contato));
+
+        Assertions.assertEquals("54354355d758j8778", id);
+    }
+
+    @Test
+    void criarContatoTelefoneFixoErrorTest() throws Exception {
+        Agenda contato = AgendaEnvironment.criarContato();
+        contato.setTelefones(Arrays.asList(AgendaEnvironment.criarTelefoneFixo().setNumero("999077765")));
+
+        IllegalStateException exception =
+                Assertions.assertThrows(IllegalStateException.class,
+                        () -> service.criarContato(contato));
+
+        Assertions.assertEquals(
+                format(NUMERO_FIXO_FORA_PADRAO.getErro(),
+                        contato.getTelefones().get(0).getNumero()),
+                exception.getMessage());
+    }
 
     @Test
     void obterContatoTest() throws Exception {
         String id = "1a";
         Agenda contato = AgendaEnvironment.criarContato();
         when(repository.findById(id)).thenReturn(Optional.of(contato));
-        Agenda contatoRetorno = service.obterContato(id);
+        Agenda contatoRetorno = Assertions.assertDoesNotThrow(() -> service.obterContato(id));
 
         Assertions.assertEquals(contato.getId(), contatoRetorno.getId());
     }
@@ -67,7 +108,7 @@ public class AgendaServiceTest {
     void obterAgendaTest() throws Exception {
         List<Agenda> agenda = Arrays.asList(AgendaEnvironment.criarContato());
         when(repository.findAll()).thenReturn(agenda);
-        List<Agenda> agendaRetorno = service.obterAgenda();
+        List<Agenda> agendaRetorno = Assertions.assertDoesNotThrow(() -> service.obterAgenda());
 
         Assertions.assertEquals(agenda.size(), agendaRetorno.size());
     }

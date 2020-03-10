@@ -1,7 +1,7 @@
 package com.raquel.msagenda.service;
 
-import com.raquel.msagenda.model.Agenda;
-import com.raquel.msagenda.model.Telefone;
+import com.raquel.msagenda.model.document.Agenda;
+import com.raquel.msagenda.model.document.Telefone;
 import com.raquel.msagenda.repository.AgendaRepository;
 
 import static com.raquel.msagenda.util.enums.MensagemErroEnum.*;
